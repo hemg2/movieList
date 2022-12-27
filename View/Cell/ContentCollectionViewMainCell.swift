@@ -50,7 +50,7 @@ class ContentCollectionViewMainCell: UICollectionViewCell {
         
         //descriptionLabel
         descriptionLabel.font = .systemFont(ofSize: 13)
-        descriptionLabel.textColor = .white
+        descriptionLabel.textColor = .black
         descriptionLabel.sizeToFit()
         
         //contentStackView
@@ -63,12 +63,13 @@ class ContentCollectionViewMainCell: UICollectionViewCell {
         }
         contentStackView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(30)
+            $0.height.equalTo(60)
         }
         
         [plusButton, infoButton].forEach {
             $0.titleLabel?.font = .systemFont(ofSize: 13)
             $0.setTitleColor(.white, for: .normal)
-            $0.imageView?.tintColor = .white
+            $0.imageView?.tintColor = .black
             $0.adjustVerticalLayout(5)
         }
         
@@ -89,6 +90,7 @@ class ContentCollectionViewMainCell: UICollectionViewCell {
             $0.height.equalTo(30)
         }
         playButton.addTarget(self, action: #selector(playButtonTapped), for: .touchUpInside)
+        
         
         //menuStackView
         menuStackView.axis = .horizontal
@@ -141,11 +143,11 @@ class ContentCollectionViewMainCell: UICollectionViewCell {
     }
 }
 
-extension UIButton {
-    func adjustVerticalLayout(_ spacing: CGFloat = 0) {
-        let imageSize = self.imageView?.frame.size ?? .zero
-        self.titleEdgeInsets = UIEdgeInsets(top: 0, left: -imageSize.width, bottom: -(imageSize.height + spacing), right: 0)
-        let titleLabelSize = self.titleLabel?.frame.size ?? .zero
-        self.imageEdgeInsets = UIEdgeInsets(top: -(titleLabelSize.height + spacing), left: 0, bottom: 0, right: -titleLabelSize.width)
-    }
-}
+//extension UIButton {
+//    func adjustVerticalLayout(_ spacing: CGFloat = 0) {
+//        let imageSize = self.imageView?.frame.size ?? .zero
+//        self.titleEdgeInsets = UIEdgeInsets(top: 0, left: -imageSize.width, bottom: -(imageSize.height + spacing), right: 0)
+//        let titleLabelSize = self.titleLabel?.frame.size ?? .zero
+//        self.imageEdgeInsets = UIEdgeInsets(top: -(titleLabelSize.height + spacing), left: 0, bottom: 0, right: -titleLabelSize.width)
+//    }
+//}
