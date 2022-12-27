@@ -26,6 +26,10 @@ class HomeViewController: UICollectionViewController {
         
         //Data 설정 가져오기
         contents = getContents()
+        
+        //콜렉션뷰 아이템설정(셀)
+        collectionView.register(ContentCollectionViewCell.self, forCellWithReuseIdentifier: "ContentCollectionViewCell")
+        collectionView.register(ContentCollectionViewHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ContentCollectionViewHeader")
     }
     
     func getContents() -> [Content] {
@@ -49,7 +53,15 @@ extension HomeViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        <#code#>
+        switch contents[indexPath.section].sectionType {
+        case .basic, .large:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ContentCollectionViewCell", for: indexPath) as? ContentCollectionViewCell else { return UICollectionViewCell() }
+            
+            cell.imageView.image = contents[indexPath.row].contentItem[indexPath.row].image
+            return cell
+        default:
+            return UICollectionViewCell()
+        }
     }
     
     //색션갯수

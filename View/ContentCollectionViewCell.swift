@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SnapKit
 
 
 class ContentCollectionViewCell: UICollectionViewCell {
@@ -24,6 +24,8 @@ class ContentCollectionViewCell: UICollectionViewCell {
         
         contentView.addSubview(imageView)
         
-        
+        imageView.snp.makeConstraints({
+            $0.edges.equalToSuperview()
+        })
     }
 }

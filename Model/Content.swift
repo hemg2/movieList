@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SnapKit
+
 
 
 struct Content: Decodable {
