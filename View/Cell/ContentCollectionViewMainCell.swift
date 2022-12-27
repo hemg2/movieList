@@ -75,10 +75,12 @@ class ContentCollectionViewMainCell: UICollectionViewCell {
         
         plusButton.setTitle("내가 찜한 콘텐츠", for: .normal)
         plusButton.setImage(UIImage(systemName: "plus"), for: .normal)
+        plusButton.setTitleColor(.black, for: .normal)
         plusButton.addTarget(self, action: #selector(plusButtonTapped), for: .touchUpInside)
         
         infoButton.setTitle("정보", for: .normal)
         infoButton.setImage(UIImage(systemName: "info.circle"), for: .normal)
+        infoButton.setTitleColor(.black, for: .normal)
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
 
         playButton.setTitle("▶︎ 재생", for: .normal)
@@ -142,12 +144,3 @@ class ContentCollectionViewMainCell: UICollectionViewCell {
         print("TEST: info button tapped")
     }
 }
-
-//extension UIButton {
-//    func adjustVerticalLayout(_ spacing: CGFloat = 0) {
-//        let imageSize = self.imageView?.frame.size ?? .zero
-//        self.titleEdgeInsets = UIEdgeInsets(top: 0, left: -imageSize.width, bottom: -(imageSize.height + spacing), right: 0)
-//        let titleLabelSize = self.titleLabel?.frame.size ?? .zero
-//        self.imageEdgeInsets = UIEdgeInsets(top: -(titleLabelSize.height + spacing), left: 0, bottom: 0, right: -titleLabelSize.width)
-//    }
-//}
