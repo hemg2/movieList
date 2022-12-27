@@ -300,7 +300,7 @@
 		<key>sectionType</key>
 		<string>large</string>
 		<key>sectionName</key>
-		<string>오직 넷플릭스에서</string>
+		<string>오늘까지 시청</string>
 		<key>contentItem</key>
 		<array>
 			<dict>
